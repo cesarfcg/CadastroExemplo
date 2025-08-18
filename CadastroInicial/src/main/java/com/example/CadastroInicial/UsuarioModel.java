@@ -1,5 +1,6 @@
 package com.example.CadastroInicial;
 
+import com.example.CadastroInicial.Carros.CarroModel;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,6 +12,10 @@ public class UsuarioModel {
     private String nome;
     private String email;
     private int idade;
+
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // FOREIGN KEY
+    private CarroModel carro;
 
     public UsuarioModel() {
     }
